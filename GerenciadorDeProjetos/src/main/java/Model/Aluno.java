@@ -23,6 +23,14 @@ public class Aluno {
 	public String getMatricula() {
 		return matricula;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setPeriodo(int periodo) {
+		this.periodo = periodo;
+	}
 	
 	
 	

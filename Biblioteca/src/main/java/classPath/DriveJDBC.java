@@ -15,7 +15,6 @@ public class DriveJDBC {
 
 	   catch(ClassNotFoundException e)
 	   {
-		   System.out.println("error class not found exception");
 	      e.printStackTrace();
 
 	   }
@@ -29,16 +28,18 @@ public class DriveJDBC {
 			gere.salvar(livro);
 			gere.salvar(livro2);
 			gere.salvar(livro3);
+			
 			livro.setAutor("Token");
 			livro.setTitulo("O senhor dos aneis");
 			livro.setEdicao("terceira");
 			
 			gere.excluir(livro2);
 			gere.atualizar(livro);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
 }

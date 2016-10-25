@@ -1,5 +1,7 @@
 package Controler;
 
+import java.sql.SQLException;
+
 import DAO.AlunoDAO;
 import DAO.ProfessorDAO;
 import DAO.ProjetoDAO;
@@ -23,12 +25,11 @@ public class ProjetoControler {
 		this.ProjetoDAO = new ProjetoDAO();
 	}
 	
-	public void adicionarAluno(Aluno aluno){
+	public void adicionarAluno(Aluno aluno) throws SQLException{
 		this.alunoDao.salvar(aluno);
 	}
 	
 	public void excluirAluno(Aluno aluno){
-		this.alunoDao.excluir(aluno);
 	}
 	
 	public void adicionarProfessor(Professor prof){
