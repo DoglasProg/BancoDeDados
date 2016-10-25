@@ -22,12 +22,19 @@ public class DriveJDBC {
 		
 		
 		Livro livro = new Livro("1", "Adriano", "casaquistao", "nona");
-		Livro livro2 = new Livro("1", "taner", "redes", "quinta");
+		Livro livro2 = new Livro("2", "taner", "redes", "quinta");
+		Livro livro3 = new Livro("3", "narnian", "narn", "terceira");
 		GerenteBiblioteca gere = new GerenteBiblioteca();
 		try {
 			gere.salvar(livro);
 			gere.salvar(livro2);
+			gere.salvar(livro3);
+			livro.setAutor("Token");
+			livro.setTitulo("O senhor dos aneis");
+			livro.setEdicao("terceira");
+			
 			gere.excluir(livro2);
+			gere.atualizar(livro);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

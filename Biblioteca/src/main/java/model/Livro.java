@@ -29,9 +29,17 @@ public class Livro {
 	public String getId() {
 		return id;
 	}
-	
-	
-	
-	
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public void setEdicao(String edicao) {
+		this.edicao = edicao;
+	}
 
 }

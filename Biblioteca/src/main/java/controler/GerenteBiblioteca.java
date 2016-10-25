@@ -20,5 +20,9 @@ public class GerenteBiblioteca {
 	public void excluir(Livro livro) throws SQLException{
 		livroDoa.excluir(livro);
 	}
+	
+	public void atualizar(Livro livro) throws SQLException{
+		livroDoa.atualizar(livro);
+	}
 
 }
