@@ -71,7 +71,5 @@ public class Projeto {
 		public Projeto builder(){
 			return new Projeto(this);
 		}
-		
-		
 	}
 }

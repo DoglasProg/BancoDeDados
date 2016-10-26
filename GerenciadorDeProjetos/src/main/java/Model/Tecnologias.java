@@ -1,6 +1,6 @@
 package Model;
 
-public class Tecnologia {
+public class Tecnologias {
 	
 	private String nome;
 	private String tipo;
@@ -8,7 +8,7 @@ public class Tecnologia {
 	private String descricao;
 	
 	
-	public Tecnologia(String nome, String tipo, String linkComponente, String descricao) {
+	public Tecnologias(String nome, String tipo, String linkComponente, String descricao) {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.linkComponente = linkComponente;
