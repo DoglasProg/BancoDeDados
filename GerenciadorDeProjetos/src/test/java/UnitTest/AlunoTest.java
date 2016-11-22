@@ -13,7 +13,7 @@ public class AlunoTest {
 
 	@Before
 	public void instanciandoAluno(){
-		this.aluno = new Aluno("Doglas", 5, "1423080001");
+		//this.aluno = new Aluno("Doglas", 5, "1423080001");
 	}
 	
 	@Test

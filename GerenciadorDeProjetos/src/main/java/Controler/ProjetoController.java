@@ -1,6 +1,6 @@
 package Controler;
 
-import DAO.ProjetoDAO;
+import Dao.ProjetoDAO;
 import Model.Projeto;
 
 public class ProjetoController {

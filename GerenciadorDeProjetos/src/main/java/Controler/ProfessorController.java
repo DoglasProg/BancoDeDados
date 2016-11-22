@@ -1,6 +1,6 @@
 package Controler;
 
-import DAO.ProfessorDAO;
+import Dao.ProfessorDAO;
 import Model.Professor;
 
 public class ProfessorController {

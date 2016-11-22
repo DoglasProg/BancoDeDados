@@ -1,18 +1,18 @@
-package DAO;
+package Dao;
 
-import Model.Tecnologias;
+import Model.Tecnologia;
 
 public class TecnologiasDAO {
 
-	public void salvar(Tecnologias tecnologia) {
+	public void salvar(Tecnologia tecnologia) {
 		
 	}
 
-	public void excluir(Tecnologias tecnologia) {
+	public void excluir(Tecnologia tecnologia) {
 		
 	}
 
-	public void atualizar(Tecnologias tecnologia) {
+	public void atualizar(Tecnologia tecnologia) {
 		
 	}
 }

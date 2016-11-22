@@ -1,8 +1,7 @@
 package Controler;
 
-import DAO.TecnologiasDAO;
-import Model.Projeto;
-import Model.Tecnologias;
+import Dao.TecnologiasDAO;
+import Model.Tecnologia;
 
 public class TecnologiasController {
 	
@@ -12,15 +11,15 @@ public class TecnologiasController {
 		tecnologiasoDao = new TecnologiasDAO();
 	}
 
-	public void salvar(Tecnologias tecnologia){
+	public void salvar(Tecnologia tecnologia){
 		tecnologiasoDao.salvar(tecnologia);
 	}
 
-	public void excluir(Tecnologias tecnologia){
+	public void excluir(Tecnologia tecnologia){
 		tecnologiasoDao.excluir(tecnologia);
 	}
 
-	public void atualizar(Tecnologias tecnologia){
+	public void atualizar(Tecnologia tecnologia){
 		tecnologiasoDao.atualizar(tecnologia);
 	}
 

@@ -17,9 +17,9 @@ public class ProjetoTest {
 
 	@Before
 	public void instanciandoProjeto(){
-		this.aluno = new Aluno("Doglas", 5, "1423080001");
-		this.prof = new Professor("Adriano","1234567");
-		this.proj = new Projeto.ProjetoBuilder(prof).builder();
+		//this.aluno = new Aluno("Doglas", 5, "1423080001");
+		//this.prof = new Professor("Adriano","1234567");
+		//this.proj = new Projeto.ProjetoBuilder(prof).builder();
 	}
 	
 	@Test

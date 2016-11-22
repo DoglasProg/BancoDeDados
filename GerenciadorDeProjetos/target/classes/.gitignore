@@ -1,5 +1,6 @@
-/DAO/
-/Principal/
 /META-INF/
-/Model/
 /Controler/
+/Dao/
+/Model/
+/Principal/
+/DaoHibernate/

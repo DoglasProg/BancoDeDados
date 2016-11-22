@@ -1,29 +1,31 @@
 package Controler;
 
-import java.sql.SQLException;
-
-import DAO.AlunoDAO;
+import DaoHibernate.AlunoDaoHibernate;
 import Model.Aluno;
 
 public class AlunoConroller {
 
-	private AlunoDAO alunoDao;
+	private AlunoDaoHibernate alunoDao;
 
 	public AlunoConroller() {
-		alunoDao = new AlunoDAO();
+		alunoDao = new AlunoDaoHibernate();
 	}
 
-	public void salvar(Aluno aluno) throws SQLException {
+	public void salvar(Aluno aluno) throws Exception {
 		alunoDao.salvar(aluno);
 
 	}
 
-	public void excluir(Aluno aluno) throws SQLException {
+	public void excluir(Aluno aluno) throws Exception {
 		alunoDao.excluir(aluno);
 	}
 
-	public void atualizar(Aluno aluno) throws SQLException {
+	public void atualizar(Aluno aluno) throws Exception {
 		alunoDao.atualizar(aluno);
+	}
+	
+	public Aluno buscar(Aluno aluno) throws Exception {
+		return alunoDao.buscar(aluno);
 	}
 
 }
