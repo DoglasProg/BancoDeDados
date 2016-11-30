@@ -11,15 +11,16 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
 import Model.Aluno;
+import Model.Tecnologia;
 
-public class AlunoDaoHibernate {
+public class TecnologiasDaoHibernate {
 	
-	public void salvar(Aluno aluno) throws Exception {
+	public void salvar(Tecnologia tec) throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		try {
 			session.beginTransaction();
-			session.save(aluno);
+			session.save(tec);
 			session.beginTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {
@@ -32,12 +33,12 @@ public class AlunoDaoHibernate {
 		}
 	}
 
-	public void excluir(Aluno aluno) throws Exception {
+	public void excluir(Tecnologia tec) throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		try {
 			session.beginTransaction();
-			session.delete(aluno);
+			session.delete(tec);
 			session.beginTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {
@@ -49,12 +50,12 @@ public class AlunoDaoHibernate {
 		}
 	}
 
-	public void atualizar(Aluno aluno) throws Exception {
+	public void atualizar(Tecnologia tec) throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		try {
 			session.beginTransaction();
-			session.update(aluno);
+			session.update(tec);
 			session.beginTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {
@@ -68,12 +69,12 @@ public class AlunoDaoHibernate {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Aluno> listar() {
+	public List<Tecnologia> listar() {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		try {
-			Criteria consulta = session.createCriteria(Aluno.class);
-			List<Aluno> resultado = consulta.list();
+			Criteria consulta = session.createCriteria(Tecnologia.class);
+			List<Tecnologia> resultado = consulta.list();
 			return resultado;
 		} catch (RuntimeException erro) {
 			throw erro;
@@ -82,20 +83,36 @@ public class AlunoDaoHibernate {
 		}
 	}
 
-	public Aluno buscar(String termoBusca) {
+	public Tecnologia buscarTitulo(String titulo) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		try {
-			Criteria crit = session.createCriteria(Aluno.class);
-			  crit.add(Restrictions.eq("matricula",termoBusca));
+			Criteria crit = session.createCriteria(Tecnologia.class);
+			  crit.add(Restrictions.eq("titulo",titulo));
 			  crit.setMaxResults(1);
-			  Aluno aluno = (Aluno) crit.uniqueResult();
-			return (Aluno) aluno;
+			  Tecnologia tec = (Tecnologia) crit.uniqueResult();
+			return (Tecnologia) tec;
 		} catch (RuntimeException erro) {
 			throw erro;
 		} finally {
 			session.close();
 		}
 	}
-	
+
+	public Tecnologia buscarDescricao(String descricao) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+		try {
+			Criteria crit = session.createCriteria(Tecnologia.class);
+			  crit.add(Restrictions.eq("descricao",descricao));
+			  crit.setMaxResults(1);
+			  Tecnologia tec = (Tecnologia) crit.uniqueResult();
+			return (Tecnologia) tec;
+		} catch (RuntimeException erro) {
+			throw erro;
+		} finally {
+			session.close();
+		}
+	}
+
 }

@@ -26,24 +26,42 @@ public class Professor {
 	@Column(name = "codigo", length = 13, nullable = false)
 	private String codigo;
 	
-	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval =true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER, orphanRemoval =true)
 	@PrimaryKeyJoinColumn
 	private Projeto projeto;
 	
-	
-	public Professor(String nome, String codigo) {
-		this.nome = nome;
-		this.codigo = codigo;
-	}
-
-
 	public String getNome() {
 		return nome;
 	}
 
-
 	public String getCodigo() {
 		return codigo;
 	}
+
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
+	}
+
+	public long getIdProfessor() {
+		return idProfessor;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public void setIdProfessor(long idProfessor) {
+		this.idProfessor = idProfessor;
+	}
+	
+	
 	
 }

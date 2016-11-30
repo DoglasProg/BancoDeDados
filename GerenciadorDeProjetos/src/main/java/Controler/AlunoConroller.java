@@ -1,5 +1,7 @@
 package Controler;
 
+import java.util.List;
+
 import DaoHibernate.AlunoDaoHibernate;
 import Model.Aluno;
 
@@ -13,7 +15,6 @@ public class AlunoConroller {
 
 	public void salvar(Aluno aluno) throws Exception {
 		alunoDao.salvar(aluno);
-
 	}
 
 	public void excluir(Aluno aluno) throws Exception {
@@ -24,8 +25,12 @@ public class AlunoConroller {
 		alunoDao.atualizar(aluno);
 	}
 	
-	public Aluno buscar(Aluno aluno) throws Exception {
-		return alunoDao.buscar(aluno);
+	public List<Aluno> listar() throws Exception {
+		return alunoDao.listar();
+	}
+	
+	public Aluno buscar(String termoBusca){
+		return alunoDao.buscar(termoBusca);
 	}
 
 }

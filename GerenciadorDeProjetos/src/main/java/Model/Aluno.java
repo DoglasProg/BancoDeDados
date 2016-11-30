@@ -7,17 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "alunos")
-@SequenceGenerator(name = "alunos_idaluno_seq", sequenceName = "alunos_idaluno_seq", allocationSize =1,
-initialValue = 1)
 public class Aluno {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "alunos_idaluno_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long idAluno;
 	
 	@Column(name = "nome", length = 100, nullable = false)
@@ -33,11 +30,6 @@ public class Aluno {
 	@JoinColumn(name = "idProjeto")
 	private Projeto projeto;
 	
-	public Aluno(String nome, String periodo, String matricula) {
-		this.nome = nome;
-		this.periodo = periodo;
-		this.matricula = matricula;
-	}
 
 	public long getIdAluno() {
 		return idAluno;

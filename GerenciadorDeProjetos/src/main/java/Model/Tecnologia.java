@@ -17,6 +17,10 @@ public class Tecnologia {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long idTecnologia;
 	
+	@Column(name = "titulo", length = 100, nullable = false)
+	private String titulo;
+	
+	
 	@Column(name = "nome", length = 100, nullable = false)
 	private String nome;
 	
@@ -33,15 +37,6 @@ public class Tecnologia {
 	@JoinColumn(name = "idProjeto")
 	private Projeto projeto;
 	
-	
-	public Tecnologia(String nome, String tipo, String linkComponente, String descricao) {
-		this.nome = nome;
-		this.tipo = tipo;
-		this.linkComponente = linkComponente;
-		this.descricao = descricao;
-	}
-
-
 	public long getIdTecnologia() {
 		return idTecnologia;
 	}
@@ -89,6 +84,26 @@ public class Tecnologia {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
+	}
+
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 	
 
